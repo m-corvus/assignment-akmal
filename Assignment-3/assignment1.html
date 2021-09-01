@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <title>Assignment1</title>
+
+    <link rel="stylesheet" href="Assignment1.css">
+</head>
+<body>
+    <div class="topnav">
+        <div class="topnav-right">
+          <a href="#">Home</a>
+          <a href="#">Product</a>
+          <a href="#">Gallery</a>
+          <a href="#">Blog</a>
+          <a href="#">Inventory</a>
+        </div>
+      </div>
+
+    <div class="profile">
+        <div class="profile-item-1">
+            <div class="avatar">
+                <img class="avatar-img" src="logo.jpeg" alt="">
+            </div>
+            <div class="user">
+                <h2 id="user-name">Nama</h3>
+                <p id="user-role"></p>
+                <div class="button">
+                    <button class="btn-kontak">Kontak</button>                    
+                    <button class="btn-resume">Resume</button>                    
+                </div>
+            </div>
+        </div>
+        <div class="profile-item-2">
+            <table class="table-profile">
+                <thead>
+                    <th>
+                        <tr>
+                            <td class="th">Availbility</td>
+                            <td class="td" id="user-availbility"></td>                            
+                        </tr>
+                        <tr>
+                            <td class="th">Usia</td>
+                            <td class="td" id="user-age"></td>                            
+                        </tr>
+                        <tr>
+                            <td class="th">Lokasi</td>
+                            <td class="td" id="user-location"></td>                            
+                        </tr>
+                        <tr>
+                            <td class="th">Pengalaman</td>
+                            <td class="td" id="user-exp"></td>                            
+                        </tr>
+                        <tr>
+                            <td class="th">Email</td>
+                            <td class="td" id="user-email"></td>                            
+                        </tr>
+                    </th>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="content">
+        <form id="myForm">
+            <label class="label" for="fname">Name</label>
+            <input type="text" id="name">
+        
+            <label class="label" for="lname">Role</label>
+            <input type="text" id="role">
+
+            <label class="label" for="lname">Availbility</label>
+            <input type="text" id="availbility">
+        
+            <label class="label" for="lname">Age</label>
+            <input type="text" id="age">
+
+            <label class="label" for="lname">Lokasi</label>
+            <input type="text" id="location">
+
+            <label class="label" for="lname">Years Experince</label>
+            <input type="text" id="exp">
+
+            <label class="label" for="lname">Email</label>
+            <input type="text" id="email">
+          
+            <button class="btn-submit" onclick="buttonPressed()">Submit</button>
+          </form>
+    </div>
+
+    <script>
+        console.log('Latihan Javascript');
+        function buttonPressed() 
+        {
+            var name = document.getElementById('name').value            
+            var role = document.getElementById('role').value            
+            var availbility = document.getElementById('availbility').value
+            var age = document.getElementById('age').value
+            var location = document.getElementById('location').value
+            var exp = document.getElementById('exp').value
+            var email = document.getElementById('email').value
+
+            console.log(name)
+
+            document.getElementById('user-name').innerHTML = name
+            document.getElementById('user-role').innerHTML = role
+            document.getElementById('user-availbility').innerHTML = availbility
+            document.getElementById('user-age').innerHTML = age
+            document.getElementById('user-location').innerHTML = location
+            document.getElementById('user-exp').innerHTML = exp
+            document.getElementById('user-email').innerHTML = email
+            
+            document.getElementById("myForm").reset();
+
+        }
+    </script>
+</body>
+</html>
