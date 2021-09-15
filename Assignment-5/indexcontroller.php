@@ -28,9 +28,6 @@ function update_data()
             $exp = $_POST['exp'];
             $email = $_POST['email'];
     
-        //     var_dump($name);
-        // die();
-    
             $sql = "update biodata set 
             name='$name', 
             role='$role', 
