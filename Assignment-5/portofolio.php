@@ -1,11 +1,16 @@
 <?php
 
-include('koneksi.php');
+// include('koneksi.php');
 
-$sql = "select * from biodata where id=1";
-$query = mysqli_query($koneksi, $sql);
+// $sql = "select * from biodata where id=1";
+// $query = mysqli_query($koneksi, $sql);
 
-$data = mysqli_fetch_array($query);
+// $data = mysqli_fetch_array($query);
+include('indexcontroller.php');
+
+$data = show_data();
+
+update_data();
 
 // var_dump($data);
 // die();
@@ -77,7 +82,7 @@ $data = mysqli_fetch_array($query);
         </div>
     </div>
     <div class="content">
-        <form method="post" id="myForm" action="ubahdata.php">
+        <form method="post" id="myForm" action="<?= $_SERVER['PHP_SELF']; ?>">
             <label class="label" for="fname">Name</label>
             <input type="text" id="name" value="<?= $data['name'] ?>" name="name">
 
@@ -99,7 +104,7 @@ $data = mysqli_fetch_array($query);
             <label class="label" for="lname">Email</label>
             <input type="text" id="email" value="<?= $data['email'] ?>" name="email">
 
-            <button type="submit" class="btn-submit">Submit</button>
+            <button type="submit" name="submit" class="btn-submit">Submit</button>
         </form>
     </div>
 
